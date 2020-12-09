@@ -85,6 +85,6 @@ Solution:272611658
 
 ## Discussion
 
-While this solution works for any arbitrary number of expenses, it is quite slow for anything more than 4. As the number of expenses for the solution increases, the number of operations increase exponentially (*I think, though I should probably do the math on that*). I went up to 6, and gave up and cancelled out of the program because it was taking too long. One possible area of improvement would be to not process the same sets over and over again, possible using dynamic programming or some such thing.
+While this solution works for any arbitrary number of expenses, it is quite slow for anything more than 4. As the number of expenses for the solution increases, the number of operations increase exponentially (*I think, though I should probably do the math on that*). I went up to 6, and gave up and cancelled out of the program because it was taking too long. One possible area of improvement would be to not process the same sets over and over again, possibly using dynamic programming or some such thing.
 
 Also, I did not do any tests for if the pair includes the same expenses within a given set. The program gave me the correct solution, all with different expenses, so I didn't see the need at this time to work out that subproblem. However, if this were a real problem (although it would be a strange use case), then I would want to work that out in the solution.
