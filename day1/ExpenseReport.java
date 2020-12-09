@@ -6,11 +6,9 @@ import java.util.Scanner;
 
 public class ExpenseReport {
    public static void main(String args[]) throws Exception {
-     int solveFor = 3;
      Expenses expenses = new Expenses();
      expenses.ReadExpenses("expenses.txt");
-     int [] counters = new int [solveFor];
-     expenses.Solve(0, counters);
+     expenses.Solve(3, 0);
    }
 
 }
@@ -27,7 +25,6 @@ class Expenses {
     while(scanner.hasNextInt()) {
         expenses[i++] = scanner.nextInt();
     }
-
     this.expenses = expenses;
   }
 
@@ -51,32 +48,40 @@ class Expenses {
        return prod;
     }
 
-    int [] MakeArray(int [] counters) {
-      int [] arr = new int[counters.length];
-      for (int i=0; i < counters.length; i++) {
+    int [] MakeArray() {
+      int [] arr = new int[this.counters.length];
+      for (int i=0; i < this.counters.length; i++) {
         arr[i] = this.expenses[counters[i]];
       }
       return arr;
     }
 
-    void Check(int [] counters) {
-      int [] arr = MakeArray(counters);
+    void Check() {
+      int [] arr = MakeArray();
         if (Sum(arr) == 2020) {
             System.out.println("Counters: " + Arrays.toString(counters));
             System.out.println("Array: " + Arrays.toString(arr));
-            System.out.print("Solution:" + Mult(arr));
+            System.out.println("Solution:" + Mult(arr));
             System.exit(0); // this ends the program.
         }
     }
 
-    void Solve(int level, int [] counters) {
+    void Solve(int solveFor, int level) {
       int length = this.expenses.length;
-      if(level == counters.length) {
-        Check(counters);
+
+      if (this.counters == null) {
+        this.counters = new int[solveFor];
+      }
+
+      if(level == this.counters.length) {
+        Check();
       }
       else {
-        for (counters[level] = 0; counters[level] < length; counters[level]++) {
-            Solve(level + 1, counters);
+        for (
+          this.counters[level] = 0;
+          this.counters[level] < length;
+          this.counters[level]++) {
+            Solve(solveFor, level + 1);
         }
       }
     }
