@@ -21,3 +21,11 @@ Each line gives the password policy and then the password. The password policy i
 In the above example, 2 passwords are valid. The middle password, cdefg, is not; it contains no instances of b, but needs at least 1. The first and third passwords are valid: they contain one a or nine c, both within the limits of their respective policies.
 
 How many passwords are valid according to their policies?
+
+#### Solution
+I probably over factored this out given my skill set, but learned a lot about java objects in the process. I created 2 objects: `Passwords` which is a wrapper object for `Password` that holds most of logic for this solution. `Passwords` reads in `Password`s from the file as an `ArrayList`, and then the main program loop `Check`s each instance, sums and prints the results.
+
+```
+Tested: 1000
+Valid:477
+```
