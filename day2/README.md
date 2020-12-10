@@ -44,7 +44,7 @@ Given the same example list from above:
 `2-9 c: ccccccccc` is invalid: both position 2 and position 9 contain c.
 How many passwords are valid according to the new interpretation of the policies?
 
-### Solution
+#### Solution
 
 Maybe I was right to over factor the first solution because the second was a simple edit to the `check` method. I think what made it easy was how I handled parsing the password string into the various components.
 
