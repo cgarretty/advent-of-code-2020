@@ -45,3 +45,10 @@ Given the same example list from above:
 How many passwords are valid according to the new interpretation of the policies?
 
 ### Solution
+
+Maybe I was right to over factor the first solution because the second was a simple edit to the `check` method. I think what made it easy was how I handled parsing the password string into the various components.
+
+```
+Tested: 1000
+Valid: 686
+```

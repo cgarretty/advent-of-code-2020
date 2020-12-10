@@ -56,11 +56,13 @@ class Password {
   boolean check() {
     int n = 0;
     for (int i = 0; i < this.password.length(); i++) {
-      if (this.letter == this.password.charAt(i)) {
-        n++;
+      if (i + 1 == this.policy[0] | (i + 1 == this.policy[1])) {
+        if (this.letter == this.password.charAt(i)) {
+          n++;
+        }
       }
     }
-    if (n >= this.policy[0] && n <= this.policy[1]) {
+    if (n == 1) {
       return true;
     }
     return false;
