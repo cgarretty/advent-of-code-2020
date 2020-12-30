@@ -75,3 +75,20 @@ Right 1, down 2.
 In the above example, these slopes would find 2, 7, 3, 4, and 2 tree(s) respectively; multiplied together, these produce the answer 336.
 
 What do you get if you multiply together the number of trees encountered on each of the listed slopes?
+
+#### Solution
+```
+Slope: (1, 1)
+Tree Hit: 77
+Slope: (3, 1)
+Tree Hit: 218
+Slope: (5, 1)
+Tree Hit: 65
+Slope: (7, 1)
+Tree Hit: 82
+Slope: (1, 2)
+Tree Hit: 43
+Solution: 3847183340
+```
+
+This solution could use some clean up, but I'm going to submit it for now. The pattern from part one was good enough that the only major change is to the main program. In the first part, I failed to account for slopes that move in the y axis faster than 1 per turn, so had to make that adjustment in part 2. This is my first use of the `long` type. Although the solution would fit in a regular `int`, if it gets expanded later we want to make sure we don't run into overflow errors.
