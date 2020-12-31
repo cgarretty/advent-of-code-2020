@@ -47,3 +47,15 @@ The fourth passport is missing two fields, cid and byr. Missing cid is fine, but
 According to the above rules, your improved system would report 2 valid passports.
 
 Count the number of valid passports - those that have all required fields. Treat cid as optional. In your batch file, how many passports are valid?
+
+#### Solution
+I thought this one would be pretty simple, since it looks pretty similar to day2, but it was a struggle to get the `Scanner` object to read the data into a single object in multiple lines. However, once I got that down it was pretty simple. here's the winning output:
+
+```
+Tested: 255
+Valid: 230
+```
+
+Also, I thought this was a good chance to learn dictionaries in Java (`Hashtable`), I implemented the solution using that data structure to handle all the passport fields. I think it worked out great. There's some room for improvement. Since this solution looks so similar to day2, I could try to do make a base class that could be extended to handle the small differences between the two solutions. Though, I will wait to do something like that once we get a third problem that looks similar.
+
+Another oddity was trying to handle the last passport object, since `scanner` wont read the last line of the file with `\n` in it. if I was feeling a bit more clever at the moment, I would try to handle that a little more gracefully.
